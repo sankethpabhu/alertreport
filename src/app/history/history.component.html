@@ -1,0 +1,81 @@
+<div class="nav-back-button">
+    <ui5-button design="Transparent" class="navback-buttonclass"  icon="nav-back" (click)=navBack()></ui5-button>
+</div>
+<div class="timeline">
+     <!-- style='overflow-y: auto'> -->
+<ui5-timeline >
+    <ng-container *ngFor="let alert of alertArray | filter:histfilter"  >
+
+        <ui5-timeline-item class="timeline-item" *ngIf="alert.event_type =='forward'" icon="action" >
+            <div class="timeline-item-event">
+            <div class="timeline-item-event-desc1">
+                <p class="event-eventid">{{alert.event_type}}</p>
+                <p class="event-desc">{{alert.event_desc}}</p>
+            </div>        
+            <div class="timeline-item-event-desc2">
+                <p class="event-timestamp">{{alert.timestamp | date:'medium'}}</p>
+                <p class="event-creator">{{alert.userName}}</p>
+            </div>
+        </div>
+        </ui5-timeline-item>
+        <ui5-timeline-item class="timeline-item" *ngIf="alert.event_type =='note'" icon="notes" >
+            <div class="timeline-item-event">
+            <div class="timeline-item-event-desc1">
+                <p class="event-eventid">{{alert.event_type}}</p>
+                <p class="event-desc">{{alert.event_desc}}</p>
+            </div>        
+            <div class="timeline-item-event-desc2">
+                <p class="event-timestamp">{{alert.timestamp | date:'medium'}}</p>
+                <p class="event-creator">{{alert.userName}}</p>
+            </div>
+        </div>
+        </ui5-timeline-item>
+
+    </ng-container>
+
+    <!-- <ui5-timeline-item title-text="called" subtitle-text="20.02.2017 11:30" class="timeline-item" icon="history"> -->
+        <!-- <div class="timeline">
+            
+        <div class='event_details'>
+            <ui5-label class="event_details2"><b>Description </b>: </ui5-label> {{alert.event_desc}}<br><br>
+            <ui5-icon class = "employee" name="employee"></ui5-icon><ui5-label class="event_details2"><b>Created By </b>: </ui5-label> {{alert.created_by}}<br><br>
+            
+        </div>
+        <div class='time'>
+            <p>
+                {{alert.timestamp|date:'medium'}}
+            </p>
+        </div>
+        </div> -->
+    <!-- </ui5-timeline-item> -->
+
+</ui5-timeline>
+
+</div>
+<div class="overview-border">
+    <div class="overview">
+        <ui5-title level="H2">Overview</ui5-title>
+    </div>
+</div>
+<ng-container *ngFor="let val of myalert ">
+    <ui5-card heading={{val.name}} class="small">
+        <!-- <img src={{val.img}} slot="avatar" /> -->
+        <ui5-icon name={{val.img}}  slot="avatar" style="width: 3rem; height: 3rem;" ></ui5-icon>
+        <ui5-list separators="Inner" class="content-padding">
+         
+            <ui5-li (click)=histroyfilter(val.name)>Count : {{val.count}}</ui5-li>
+          
+            
+        </ui5-list>
+    </ui5-card>
+</ng-container>
+
+
+
+<br>
+<br><br>
+<br>
+<br><br>
+
+
+	

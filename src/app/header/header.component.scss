@@ -1,0 +1,18 @@
+.detail-navbar {
+    padding: 0em;
+    background-color: #004262;
+    margin: 0em;
+    height: 60px;
+    .detail-title {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      display: flex;
+      align-items: center;
+      
+      justify-content: center;
+      .navbar-title {
+        font-family: Georgia, 'Times New Roman', Times, serif; 
+        color: white;
+      }
+    }
+}

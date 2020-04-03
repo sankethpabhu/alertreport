@@ -1,0 +1,83 @@
+<div class="searchlayout">
+<div class="search">
+	<!-- <ui5-input id="searchInput" placeholder=" Enter Search" (input)="searchText = $event.target.value">
+		<ui5-icon id="searchIcon" slot="icon" name="search" class="inputIcon"></ui5-icon>
+	</ui5-input> -->
+	<div class="statuslabel"><ui5-label>Status</ui5-label></div>
+	<div class="status">	
+		 <ui5-select  class="select-status" (change)="statusChanged($event)">
+		<ui5-option  selected >All </ui5-option>
+		<ui5-option >Open</ui5-option>
+		<ui5-option >Held</ui5-option>
+		<ui5-option >Under Investigation</ui5-option>
+		<ui5-option >Forwaded</ui5-option>
+		<ui5-option >Close</ui5-option>
+	</ui5-select>
+</div>
+
+<div class="Scenariolabel"><ui5-label>Scenario</ui5-label></div>
+<div class="Scenario">
+	<ui5-select class="select-Scenario">
+		<ui5-option selected >payment term anomaly</ui5-option>
+	</ui5-select>
+</div>
+
+
+<div class="select-Date" >
+	<ui5-datepicker class="select-Date1" id="myDatepicker2" placeholder='Search by Date' title='Delivery Date!' (change)="dateChanged($event)"></ui5-datepicker>
+
+
+</div>
+
+</div>
+
+</div>
+<div class="report">
+	<ui5-table class="alert-table" id="table" >
+	<!-- Columns -->
+	<ui5-table-column  class="column" slot="columns" min-width="20">
+		<span >Alert ID</span>
+	</ui5-table-column>
+
+	<ui5-table-column  class="column" slot="columns" min-width="20" >
+		<span >Status</span>
+	</ui5-table-column>
+
+	<ui5-table-column  class="column" slot="columns" min-width="20">
+		<span>Created On</span>
+	</ui5-table-column>
+
+	<ui5-table-column  class="column" slot="columns" min-width="20" >
+		<span>Created By</span>
+	</ui5-table-column>
+	<ui5-table-column  class="column" slot="columns" min-width="20" >
+		<span>Currently With</span>
+		 
+	</ui5-table-column>
+	<ui5-table-column  class="column" slot="columns"  min-width="20">
+		<span>Scenario</span>
+    </ui5-table-column>
+    <ui5-table-column  class="column" slot="columns" min-width="20" >
+		<span>Alert Type</span>
+	</ui5-table-column>
+   
+    <ui5-table-column  class="column" slot="columns" min-width="20">
+		<span>Run Id</span>
+	</ui5-table-column>
+    <ui5-table-row  class="alertTableRow" *ngFor="let alert of alertArray  " >
+		<!-- <ui5-table-cell class="cell" (click)="displayHistory()">{{alert.alertname}} </ui5-table-cell> -->
+		<ui5-button  (click)="displayHistory(alert)" design="Transparent" class="alertButton"><p>{{alert.alertname}}</p></ui5-button>
+        <ui5-table-cell ><p>{{alert.alertstatus}}</p></ui5-table-cell>
+        <ui5-table-cell><p>{{alert.time|date: 'medium'}}</p></ui5-table-cell>
+        <ui5-table-cell><p>{{alert.user_id}}</p></ui5-table-cell>
+		<ui5-table-cell><p>{{alert.currently}}</p></ui5-table-cell>
+		<ui5-table-cell><p>{{alert.scenario}}</p></ui5-table-cell>
+        <ui5-table-cell><p>{{alert.alert_type}}</p></ui5-table-cell>
+        <ui5-table-cell><p>{{alert.runid}}</p></ui5-table-cell>
+    </ui5-table-row>
+
+</ui5-table>
+
+</div>
+
+

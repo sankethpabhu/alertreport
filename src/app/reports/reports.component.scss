@@ -1,0 +1,113 @@
+// #alerttable {
+//     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+//     border-collapse: collapse;
+//     width: 100%;
+//   }
+//  td,th {
+//     border: 1px solid #ddd;
+//     padding: 8px;
+//   }
+  
+//  tr:nth-child(even){background-color: #f2f2f2;}
+ 
+//  tr:hover {background-color: #ddd;}
+  
+//   #alerttable  {
+//     padding-top: 12px;
+//     padding-bottom: 12px;
+//     text-align: left;
+//     background-color: #4CAF50;
+//     color: white;
+//   }
+.searchlayout{
+  background-color: #fafafa;
+}
+
+.search{
+
+  padding: 13px;
+ 
+  .inputIcon {
+		background: #fafafa;
+		color: #0a6ed1;
+		cursor: pointer;
+	}
+	.inputIcon:hover{
+		background: rgba(224,224,224,0.5)
+  }
+
+}
+  #table{
+    width: 100%;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    // text-align: left;
+    border: 0.5px solid rgb(170, 166, 166);
+    // overflow-y: scroll;
+    height: 80%;
+    
+    .column {
+      text-align:center;
+      span {
+        font-weight: bolder;
+        font-size: 15px;
+        text-align:center;
+      }
+    }
+ 
+  .alertTableRow{
+    line-height: 2.5rem;
+    font-size: 10 px;
+    .cell{
+          cursor:pointer;
+          font-size: 10px;
+     }
+
+    }
+
+
+  }
+
+  
+  .alertTableCell , p{
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+  }
+
+
+  .alert-table{
+    overflow-y:auto;
+  }
+
+  .alertButton{
+     height: 5rem;
+     width: 6rem;
+  }
+
+  .status,.Scenario,.select-Date{
+    display:inline-block;
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    margin-left: 30px;
+    .select-status,.select-Scenario{
+      width: 350px;
+    }
+    .select-Date1{
+      width: 350px;
+    }
+  }
+
+  .statuslabel,.status{
+    display:inline-block;
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    margin-left: 10px;
+  }
+  .Scenariolabel,.Scenario{
+    display:inline-block;
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    margin-left: 10px;
+  }
+
+
+  .statuslabel{
+    font-weight: bold;
+    font-size: 10px;
+  }
